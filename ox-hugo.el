@@ -3471,6 +3471,11 @@ their Hugo site's config."
      ;; Regular src block.
      (t
       (let* (;; See `org-element-src-block-parser' for all SRC-BLOCK properties.
+             (tangle-filepath
+              (let ((tangle-value (cdr (assoc :tangle parameters))))
+                (if (or (null tangle-value) (string= tangle-value "no"))
+                    lang
+                  tangle-value)))
              (line-num-p (org-element-property :number-lines src-block)) ;Non-nil if -n or +n switch is used
              (linenos-style (or (cdr (assoc :linenos parameters))
                                 ;; If `org-hugo-src-block' is called from
@@ -3571,6 +3576,11 @@ their Hugo site's config."
           (if (org-string-nw-p code-attr-str)
               (setq code-attr-str (format "%s, hl_lines=%s" code-attr-str hl-lines))
             (setq code-attr-str (format "hl_lines=%s" hl-lines))))
+
+        (when tangle-filepath
+          (if (org-string-nw-p code-attr-str)
+              (setq code-attr-str (format "%s, tangle_filepath=\"%s\"" code-attr-str tangle-filepath))
+            (setq code-attr-str (format "tangle_filepath=\"%s\"" tangle-filepath))))
 
         (when code-refs
           (let* ((anchor-prefix (cdr code-refs-and-anchor))
