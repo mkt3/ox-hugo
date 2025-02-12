@@ -441,6 +441,12 @@
    site = "https://book.rymcg.tech/"
    branch = "ox-hugo"
   
+[crunchbang]
+  author = "Athul Suresh"
+  source = "https://github.com/crunchbang/athulsuresh.com"
+  site = "https://athulsuresh.com"
+  org_dir = "content-org"
+
 # [ValidTOMLKey] <-- The key cannot contain spaces or periods.
 #   author = ""
 #   source = ""
