@@ -19,7 +19,7 @@ print(str[1:])
 ```
 
 ```text
-	bc
+    bc
 ```
 
 The whitespace before "bc" in the results block above should be
@@ -38,7 +38,7 @@ print(str[1:])
 <div class="results-fixed-block">
 
 ```text
-	ef
+    ef
 ```
 </div>
 
