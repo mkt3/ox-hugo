@@ -1,7 +1,7 @@
 +++
 title = "Custom front matter with nested maps in TOML"
 description = "Custom TOML front-matter with TOML tables."
-tags = ["custom-fm", "TOML-Table", "nested-map"]
+tags = ["custom-fm", "TOML-table", "nested-map"]
 draft = false
 [dog]
   legs = 4
